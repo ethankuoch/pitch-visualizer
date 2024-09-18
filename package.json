@@ -1,5 +1,5 @@
 {
-  "name": "react-test-setup",
+  "name": "pitch-visualizer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@react-three/fiber": "^8.17.7",
+    "@types/three": "^0.168.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.3.0",
