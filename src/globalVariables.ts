@@ -1,0 +1,16 @@
+export const pitchTypes = [
+  'changeup',
+  'curveball',
+  'cutter',
+  'eephus',
+  'forkball',
+  'four-seam-fastball',
+  'knuckleball',
+  'knuckle-curve',
+  'screwball',
+  'sinker',
+  'slider',
+  'slurve',
+  'splitter',
+  'sweeper',
+];
