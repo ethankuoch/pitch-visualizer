@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { NextUIProvider } from '@nextui-org/react';
 
 import NavBar from '@/components/navBar/NavBar.tsx';
 
@@ -8,16 +8,10 @@ const Home = lazy(() => import('@/components/home/Home.tsx'));
 const Article = lazy(() => import('@/components/article/Article.tsx'));
 const NoMatch = lazy(() => import('@/components/noMatch/NoMatch.tsx'));
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
-
 function App() {
   return (
     <>
-      <ThemeProvider theme={darkTheme}>
+      <NextUIProvider>
         <NavBar />
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
@@ -26,7 +20,7 @@ function App() {
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </Suspense>
-      </ThemeProvider>
+      </NextUIProvider>
     </>
   );
 }

@@ -2,25 +2,22 @@ import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
 import './Home.css';
 import { pitchTypes } from '@/globalVariables.ts';
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-} from '@mui/material';
+import { Card, CardBody, Button } from '@nextui-org/react';
 
 function Cards() {
   return (
     <>
       {pitchTypes.map(pitchType => {
         return (
-          <Card className="bg-gray-800">
-            <CardMedia component="img" alt={pitchType} height="140" image="/" />
-            <CardContent>{pitchType}</CardContent>
-            <CardActions>
-              <Button>View</Button>
-            </CardActions>
+          <Card key={pitchType}>
+            <CardBody>
+              {pitchType}
+              <Button
+                color="primary"
+                onClick={() => (window.location.href = `/pitch/${pitchType}`)}>
+                View
+              </Button>
+            </CardBody>
           </Card>
         );
       })}
