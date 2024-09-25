@@ -1,12 +1,13 @@
-import './Article.scss';
+import './Article.css';
 import { useParams, useNavigate } from 'react-router-dom';
+import { pitchTypes } from '@/globalVariables.ts';
 import NoMatch from '@/components/noMatch/NoMatch.tsx';
 
 function Article() {
   const { pitchType } = useParams();
   const navigate = useNavigate();
 
-  if (pitchType !== 'fastball') {
+  if (!pitchTypes.includes(pitchType as string)) {
     return <NoMatch />;
   }
 

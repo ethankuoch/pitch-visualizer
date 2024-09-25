@@ -1,11 +1,34 @@
-import { useState } from 'react';
 import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
-import './Home.scss';
+import './Home.css';
+import { pitchTypes } from '@/globalVariables.ts';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+} from '@mui/material';
+
+function Cards() {
+  return (
+    <>
+      {pitchTypes.map(pitchType => {
+        return (
+          <Card className="bg-gray-800">
+            <CardMedia component="img" alt={pitchType} height="140" image="/" />
+            <CardContent>{pitchType}</CardContent>
+            <CardActions>
+              <Button>View</Button>
+            </CardActions>
+          </Card>
+        );
+      })}
+    </>
+  );
+}
 
 function Home() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
@@ -16,18 +39,7 @@ function Home() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Cards />
     </>
   );
 }

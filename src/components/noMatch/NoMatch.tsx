@@ -1,4 +1,4 @@
-import './NoMatch.scss';
+import './NoMatch.css';
 
 function NoMatch() {
   return (
